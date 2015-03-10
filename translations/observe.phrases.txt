@@ -1,0 +1,37 @@
+"Phrases"
+{
+	"Observing"
+	{
+		"#format"	"{1:s},{2:s}"
+		"en"	"{lightgreen}[{green}Observe{lightgreen}]{default} You are now observing {green}{1}{default} ({green}{2}{default})."
+	}
+	"Observe on Spec"
+	{
+		"#format" "{1:s},{2:s}"
+		"en"	"{lightgreen}[{green}Observe{lightgreen}]{default} When you are dead or switch to spectator you will observe {green}{1}{default} ({green}{2}{default})"
+	}
+	"Observe Failed"
+	{
+		"#format" "{1:s}"
+		"en"	"{lightgreen}[{green}Observe{lightgreen}]{default} Unable to observe target {green}{1}{default}, unspecified error."
+	}
+    "Damage Given"
+	{
+		"#format"	"{1:s},{2:s}, {3:.1f}"
+		"en"	"{lightgreen}[{green}Observe{lightgreen}]{default} {lightblue}{1}{default} hit {lightblue}{2}{default} for ({red}{3}{default})."
+	}	
+    "Target Left"
+	{
+		"#format" "{1:s}"
+		"en" "{lightgreen}[{green}Observe{lightgreen}]{default} You are no longer observing {green}{1}{default}, target has left the server."
+	}
+	"End Observe"
+	{
+		"en"	"{lightgreen}[{green}Observe{lightgreen}]{default} You are no longer observing anyone."
+	}
+
+	"Unknown Target"
+	{
+		"en" "{lightgreen}[{green}Observe{lightgreen}]{default} Couldn't find the target, please try again."
+	}
+}
