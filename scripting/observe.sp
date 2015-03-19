@@ -59,11 +59,6 @@ public OnPluginStart() {
     if(conVar != INVALID_HANDLE) {
         g_useSteamBans = true;
     }
-    for(new i = 0; i < MAXPLAYERS; i++)
-    {
-        if(isValidHumanClient(i))
-            SDKHook(i, SDKHook_OnTakeDamage, OnTakeDamage);
-    }
     decl String:szBuffer[ 8 ];
     
     GetGameFolderName(szBuffer, sizeof(szBuffer));
@@ -80,28 +75,6 @@ public OnPluginStart() {
 /********************************************************************************
     Events
 *********************************************************************************/
-public OnClientPutInServer(i){
-        if(isValidHumanClient(i))
-            SDKHook(i, SDKHook_OnTakeDamage, OnTakeDamage);
-}
-
-public Action:OnTakeDamage(victim, &attacker, &inflictor, &Float:damage, &damagetype)
-{
-    if(isValidHumanClient(attacker) && isValidHumanClient(victim)){
-        for(new i = 0; i < MAXPLAYERS; i++)
-        {
-            if(g_clientObserveTarget[i] == attacker && GetClientTeam(attacker) != GetClientTeam(victim)){
-                new String:victimname[MAX_NAME_LENGTH];
-                new String:attackername[MAX_NAME_LENGTH];
-                GetClientName(attacker,attackername,sizeof(attackername));
-                GetClientName(victim, victimname,sizeof(victimname));
-                CPrintToChat(i, "%t", "Damage Given", attackername, victimname,damage);
-            }
-        }
-        return Plugin_Continue;
-    }
-    return Plugin_Continue;
-}
 
 public Action:EventPlayerSpawn(Handle:event, const String:name[], bool:dontBroadcast) {
     /* Suggestions for improvement, or single-shot method? */

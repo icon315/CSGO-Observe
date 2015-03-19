@@ -17,7 +17,7 @@
 	}
     "Damage Given"
 	{
-		"#format"	"{1:s},{2:s}, {3:.1f}"
+		"#format" "{1:s},{2:s},{3:.2f}"
 		"en"	"{lightgreen}[{green}Observe{lightgreen}]{default} {lightblue}{1}{default} hit {lightblue}{2}{default} for ({red}{3}{default})."
 	}	
     "Target Left"
